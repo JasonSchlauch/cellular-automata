@@ -11,7 +11,7 @@ namespace lifetest
   public class Example
   {
     [TestMethod]
-    public void CreateGrid()
+    public void CreateAndIterateGrid()
 
     {
       Grid g = new Grid(3, new MortalEntityFactory());

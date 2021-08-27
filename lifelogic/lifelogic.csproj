@@ -41,14 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coordinate.cs" />
+    <Compile Include="PlanerCoordinate.cs" />
     <Compile Include="Grid.cs" />
+    <Compile Include="GridStorage.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IEntityFactory.cs" />
     <Compile Include="IField.cs" />
+    <Compile Include="IFieldStorage.cs" />
     <Compile Include="MortalEntity.cs" />
     <Compile Include="MortalEntityFactory.cs" />
-    <Compile Include="NeighborPosition.cs" />
     <Compile Include="ICoordinate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

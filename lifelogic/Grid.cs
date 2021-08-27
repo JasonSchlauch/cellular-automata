@@ -1,76 +1,110 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace lifelogic
 {
   public class Grid : IField
   {
     public uint Length { get; protected set; }
-    private IEntity[,] entities;
     private IEntityFactory factory;
+    private GridStorage storage;
     public Grid(uint Length, IEntityFactory factory)
     {
       this.Length = Length;
       this.factory = factory;
-      entities = new IEntity[this.Length, this.Length];
     }
 
     public void Initialize()
     {
       if (factory != null)
       {
-        for (int i = 0; i < Length; i++)
+        storage = new GridStorage(Length, Length);
+        List<ICoordinate> coords = GetCoordinates();
+        foreach (ICoordinate coord in coords)
         {
-          for (int j = 0; j < Length; j++)
-          {
-            entities[i, j] = factory.Create();
-          }
-        }
+          storage.Store(factory.Create(), coord);
+        }        
       }
 
+    }
+
+    public List<ICoordinate> GetCoordinates()
+    {
+      List<ICoordinate> newCoordinates = new List<ICoordinate>();
+      for (int i = 0; i < this.Length; i++)
+      {
+        for (int j = 0; j < this.Length; j++)
+        {
+          PlanerCoordinate currentCell = new PlanerCoordinate(i, j);
+          newCoordinates.Add(currentCell);
+        }
+      }
+      return newCoordinates;
     }
 
     public void Tick()
     {
-      IEntity[,] resultingEntities = new IEntity[this.Length, this.Length];
-      for (int i = 0; i < Length; i++)
+      var storage2 = new GridStorage(Length, Length); 
+      foreach (ICoordinate coor in this.GetCoordinates())
       {
-        for (int j = 0; j < Length; j++)
+        IEntity entityClone = this.GetEntityAt(coor).Clone();
+        if (entityClone == null)
         {
-          Coordinate currentCell = new Coordinate(i, j);
-          IEntity e = GetEntityAt(currentCell);
-          int counter = 0;
-          foreach (var v in Enum.GetValues(typeof(NeighborPosition)))
-          {
-            ICoordinate neighborCell = (ICoordinate)currentCell.GetNeighboringCoordinate((NeighborPosition)v);
-            IEntity e2 = GetEntityAt(neighborCell);
-            if (e2 != null && e2.Alive)
-            {
-              counter++;
-            }
-          }
-          IEntity copy = e.Clone();
-          copy.EvaluateLivingNeighborCount(counter);
-          resultingEntities[i, j] = copy;
+          throw new NullReferenceException("entity clone cannot be null");
         }
+        List<ICoordinate> coorList = coor.GetNeighboringCoordinates();
+        List<IEntity> entityList = this.GetEntitiesAt(coorList);
+        entityClone.EvaluateNeighbors(entityList);
+        storage2.Store(entityClone, coor);
       }
-      this.entities = resultingEntities;
+      this.storage = storage2;
     }
 
+    
 
     public IEntity GetEntityAt(ICoordinate coordinate)
     {
       if (IsInField(coordinate))
-        return entities[coordinate.x, coordinate.y];
-      return null;
+      {
+        return storage.Get(coordinate);
+      }
+      else
+      {
+
+        return null;
+      }
+    }
+
+    public List<IEntity> GetEntitiesAt(List<ICoordinate> coordinates)
+    {
+      List<IEntity> newEntities = new List<IEntity>();
+      foreach (ICoordinate coordinate in coordinates)
+      {
+
+        {
+          IEntity ie = GetEntityAt(coordinate);
+          if (ie != null)
+          {
+            newEntities.Add(ie);
+          }
+        }
+      }
+      return newEntities;
     }
 
     public bool IsInField(ICoordinate coordinate)
     {
       return coordinate.x >= 0 && coordinate.y >= 0 && coordinate.x < this.Length && coordinate.y < this.Length;
+    }
+
+    public void Deinitialize()
+    {
+      
+    }
+
+    public void StoreEntityAt(IEntity entity, ICoordinate coordinate)
+    {
+      storage.Store(entity, coordinate);
     }
   }
 }

@@ -6,17 +6,8 @@ using System.Threading.Tasks;
 
 namespace lifelogic
 {
-
-  //class Directions
-  public enum NeighborPosition
+  public interface IFieldStorage
   {
-    NW,
-    W,
-    SW,
-    S,
-    SE,
-    E,
-    NE,
-    N
+    void Store(IEntity entity, ICoordinate coordinate);
   }
 }

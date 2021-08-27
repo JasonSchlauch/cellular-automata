@@ -8,7 +8,7 @@ namespace lifelogic
 {
   public interface ICoordinate
   {
-    ICoordinate GetNeighboringCoordinate(NeighborPosition pos);
+    List<ICoordinate> GetNeighboringCoordinates();
     int x { get; set; }
     int y { get; set; }
   }
