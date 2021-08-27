@@ -16,7 +16,7 @@ namespace lifetest
     [TestMethod]
     public void StaticSetsShouldReturnKnownResults()
     {
-      // Contrived 3x3 grid
+      // Contrived 3x3 grid.  NE corner (0,2) = dead, all others alive.
       Grid g = new Grid(3, new _3x3factory());
       g.Initialize();
 
@@ -45,21 +45,6 @@ namespace lifetest
       Assert.IsTrue(coordinates2.Count(c => (c.x == -1 && c.y == 2)) == 1);
       Assert.IsTrue(coordinates2.Count(c => (c.x == 0 && c.y == 2)) == 1);
       Assert.IsTrue(coordinates2.Count(c => (c.x == 1 && c.y == 2)) == 1);
-
-      /*
-      foreach (PlanerCoordinate coordinate in coordinates)
-      {
-        IEntity e = g.GetEntityAt(coordinate);
-        if (coordinate.x == 1 && coordinate.y == 1)
-        {
-          Assert.IsTrue(e.Alive);
-        }
-        else
-        {
-          Assert.IsFalse(e.Alive);
-        }
-      }
-      */
 
     }
   }

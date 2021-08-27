@@ -10,14 +10,12 @@ namespace console_ui
   {
     static void Main(string[] args)
     {
-      uint gridLength = 3;
+      uint gridLength = 10;
       lifelogic.Grid g = new lifelogic.Grid(gridLength, new lifelogic.MortalEntityFactory());
       g.Initialize();
 
-      for (int generation = 0; generation < 10; generation++)
+      for (int generation = 0; generation < 100; generation++)
       {
-        List<lifelogic.ICoordinate> coords = g.GetCoordinates();
-        coords.OrderBy(a => a.x).ThenBy(a => a.y);
         Console.WriteLine("Generation {0}", generation);
         for (int i = 0; i < gridLength; i++)
         {
@@ -26,11 +24,11 @@ namespace console_ui
             lifelogic.IEntity e = g.GetEntityAt(new lifelogic.PlanerCoordinate(i, j));
             if (e == null || !e.Alive)
             {
-              Console.Write(".");
+              Console.Write("0");
             }
             else
             {
-              Console.Write("*");
+              Console.Write("1");
             }
           }
           Console.WriteLine();

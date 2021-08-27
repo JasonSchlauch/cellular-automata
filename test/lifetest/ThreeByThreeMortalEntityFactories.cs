@@ -8,6 +8,15 @@ using System.Threading.Tasks;
 
 namespace lifetest
 {
+  /// <summary>
+  /// 3x3 Grid mortal entity factories for testing
+  /// </summary>
+  
+  
+  /// _3x3factory is designed to produce a 3x3 grid:
+  /// 100
+  /// 000
+  /// 101
   public class _3x3factory : lifelogic.IEntityFactory
   {
     private int invocation = 0;
