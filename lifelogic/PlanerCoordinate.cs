@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace lifelogic
 {
   /// <summary>
-  /// Zero-based coordinate scheme.  Coordinates can exist off-grid.
+  /// Zero-based coordinate scheme.  Coordinates can exist off of an IField.
   /// </summary>
   public class PlanerCoordinate : ICoordinate
   {
@@ -24,7 +24,7 @@ namespace lifelogic
       List<ICoordinate> neighbors = new List<ICoordinate>();
 
       { // North
-        neighbors.Add(new PlanerCoordinate(x - 1, y));
+        neighbors.Add(new PlanerCoordinate(x, y - 1));
       }
       { // Northwest
         neighbors.Add(new PlanerCoordinate(x - 1, y - 1));
@@ -35,11 +35,11 @@ namespace lifelogic
       }
       // Southwest
       {
-        neighbors.Add(new PlanerCoordinate(x - 1, y - 1));
+        neighbors.Add(new PlanerCoordinate(x - 1, y + 1));
       }
       // South
       {
-        neighbors.Add(new PlanerCoordinate(x, y - 1));
+        neighbors.Add(new PlanerCoordinate(x, y + 1));
       }
       // Southeast
       {
@@ -51,7 +51,7 @@ namespace lifelogic
       }
       // Northeast
       {
-        neighbors.Add(new PlanerCoordinate(x + 1, y + 1));
+        neighbors.Add(new PlanerCoordinate(x + 1, y - 1));
       }
       return neighbors;
     }

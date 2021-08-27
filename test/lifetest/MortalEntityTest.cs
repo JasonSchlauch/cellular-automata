@@ -76,8 +76,8 @@ namespace lifetest
       me.Alive = false;
       me.EvaluateNeighbors(neighbors);
       Assert.IsTrue(me.Alive, "Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.");
-
-
     }
+
+
   }
 }

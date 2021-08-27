@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace lifelogic
 {
+  /// <summary>
+  /// Back-end storage for a grid.
+  /// </summary>
   public class GridStorage : IFieldStorage
   {
     private IEntity[,] storage;
@@ -20,6 +23,10 @@ namespace lifelogic
       return storage[coordinate.x, coordinate.y];
     }
 
+    public void Clear()
+    {
+      storage = new IEntity[storage.GetUpperBound(0) + 1, storage.GetUpperBound(1) + 1];
+    }
     public void Store(IEntity entity, ICoordinate coordinate)
     {
       storage[coordinate.x, coordinate.y] = entity;

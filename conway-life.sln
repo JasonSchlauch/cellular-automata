@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifelogic", "lifelogic\life
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lifetest", "test\lifetest\lifetest.csproj", "{B3AA5EEE-5251-4DC3-A552-4828A0D8EC82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console-ui", "ui\console-ui\console-ui.csproj", "{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B3AA5EEE-5251-4DC3-A552-4828A0D8EC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3AA5EEE-5251-4DC3-A552-4828A0D8EC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3AA5EEE-5251-4DC3-A552-4828A0D8EC82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

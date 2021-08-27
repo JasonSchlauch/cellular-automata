@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace lifelogic
 {
+  /// <summary>
+  /// Used to create (ostensibly random) Entities
+  /// </summary>
   public interface IEntityFactory
   {
     IEntity Create();

@@ -8,6 +8,7 @@ namespace lifelogic
 {
   public class MortalEntityFactory : IEntityFactory
   {
+    private Random rando = new Random();
     public Type GetEntityType()
     {
       return typeof(MortalEntity);
@@ -16,9 +17,8 @@ namespace lifelogic
     public IEntity Create()
     {
       MortalEntity m = new MortalEntity();
-      var random = new Random();
       // Next generates random r where 0 >= r > 2
-      m.Alive = random.Next(0, 2) > 0;
+      m.Alive = rando.Next(0, 2) > 0;
       return m;
     }
 

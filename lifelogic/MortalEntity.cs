@@ -29,9 +29,15 @@ namespace lifelogic
     /// Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
     /// All other live cells die in the next generation.   Similarly, all other dead cells stay dead.
     /// </summary>
-    /// <param name="neighbors">A list of IEntities that </param>
-
-
+    /*
+     *  Alive N               new Alive
+          1   0,1             ->  0  # Lonely
+          1   4,5,6,7,8       ->  0  # Overcrowded
+          1   2,3             ->  1  # Lives
+          0   3               ->  1  # It takes three to give birth!
+          0   0,1,2,4,5,6,7,8 ->  0  # Barren
+    */
+    /// <param name="neighbors">A list of IEntities that border this cell</param>
     public void EvaluateNeighbors(List<IEntity> neighbors)
     {
       // Null collection equals empty collection
