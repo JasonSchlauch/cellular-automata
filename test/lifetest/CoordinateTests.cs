@@ -17,7 +17,7 @@ namespace lifetest
     public void StaticSetsShouldReturnKnownResults()
     {
       // Contrived 3x3 grid.  NE corner (0,2) = dead, all others alive.
-      Grid g = new Grid(3, new _3x3factory());
+      Grid g = new Grid(3, new _3x3factoryTriCorn());
       g.Initialize();
 
       // Assure all correct coordinates are in collection

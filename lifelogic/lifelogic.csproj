@@ -41,16 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlanerCoordinate.cs" />
-    <Compile Include="Grid.cs" />
-    <Compile Include="GridStorage.cs" />
-    <Compile Include="IEntity.cs" />
-    <Compile Include="IEntityFactory.cs" />
-    <Compile Include="IField.cs" />
-    <Compile Include="IFieldStorage.cs" />
-    <Compile Include="MortalEntity.cs" />
-    <Compile Include="MortalEntityFactory.cs" />
-    <Compile Include="ICoordinate.cs" />
+    <Compile Include="classes-conway\PlanerCoordinate.cs" />
+    <Compile Include="classes-conway\Grid.cs" />
+    <Compile Include="classes-conway\GridStorage.cs" />
+    <Compile Include="interface\IEntity.cs" />
+    <Compile Include="interface\IEntityFactory.cs" />
+    <Compile Include="interface\IField.cs" />
+    <Compile Include="interface\IFieldStorage.cs" />
+    <Compile Include="classes-conway\MortalEntity.cs" />
+    <Compile Include="classes-conway\MortalEntityFactory.cs" />
+    <Compile Include="interface\ICoordinate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

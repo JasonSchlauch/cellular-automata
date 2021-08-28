@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace lifelogic
 {
   /// <summary>
-  /// Abstracts back-end storage of a field.
+  /// Abstracts back-end storage of a field.  A square field could
+  /// be represented by linear storage, or planer storage of different
+  /// types representing entites, or whatever.
   /// </summary>
   public interface IFieldStorage
   {

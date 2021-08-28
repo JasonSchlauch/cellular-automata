@@ -16,7 +16,7 @@ namespace lifetest
     [TestMethod]
     public void TickTest3x3Simple()
     {
-      Grid g = new Grid(3, new _3x3factory());
+      Grid g = new Grid(3, new _3x3factoryTriCorn());
       g.Initialize();
       g.Tick();
 

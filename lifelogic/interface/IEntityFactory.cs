@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace lifelogic
 {
   /// <summary>
-  /// Used to create (ostensibly random) Entities
+  /// Used to populate a field with (ostensibly random) Entities.
+  /// Also used to create entirely contrived test data.
   /// </summary>
   public interface IEntityFactory
   {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace lifelogic
 {
   /// <summary>
-  /// Zero-based coordinate scheme.  Coordinates can exist off of an IField.
+  /// Zero-based 2D coordinate scheme.  Coordinates can exist off of an IField.
   /// </summary>
   public class PlanerCoordinate : ICoordinate
   {
