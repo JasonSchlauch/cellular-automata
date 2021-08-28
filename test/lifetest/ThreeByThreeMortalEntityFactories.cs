@@ -13,13 +13,17 @@ namespace lifetest
   /// </summary>
   
   
-  /// _3x3factory is designed to produce a 3x3 grid:
+  /// _3x3factoryTriCorn is designed to produce a 3x3 grid:
   /// 100
   /// 000
   /// 101
-  public class _3x3factory : lifelogic.IEntityFactory
+  public class _3x3factoryTriCorn : lifelogic.IEntityFactory
   {
     private int invocation = 0;
+    // Creates 3x3 grid
+    // 100
+    // 000
+    // 101
     public IEntity Create()
     {
       IEntity e = new MortalEntity();
@@ -40,9 +44,6 @@ namespace lifetest
       invocation++;
       return e;
     }
-
-    
-
     Type IEntityFactory.GetEntityType()
     {
       return typeof(lifelogic.MortalEntity);

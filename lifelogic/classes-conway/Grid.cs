@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace lifelogic
 {
+  /// <summary>
+  /// Represents an implementation of an IField that is a square grid.
+  /// </summary>
   public class Grid : IField
   {
     public uint Length { get; protected set; }
@@ -49,7 +52,7 @@ namespace lifelogic
       // Better to use a double buffer.
       var storage2 = new GridStorage(Length, Length);
       // Iterate over all coordinates in the grid, assign result to "new" grid.
-      
+
       foreach (ICoordinate coor in this.GetCoordinates())
       {
         IEntity entityClone = this.GetEntityAt(coor).Clone();

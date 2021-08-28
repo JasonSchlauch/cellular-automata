@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lifelogic", "lifelogic\life
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lifetest", "test\lifetest\lifetest.csproj", "{B3AA5EEE-5251-4DC3-A552-4828A0D8EC82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console-ui", "ui\console-ui\console-ui.csproj", "{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "conway-ui-console", "ui\console-ui\conway-ui-console.csproj", "{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
