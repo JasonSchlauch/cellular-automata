@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lifetest", "test\lifetest\l
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console-ui", "ui\console-ui\console-ui.csproj", "{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{3191F68C-087D-45CE-8EB4-E6A67D96DD13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FC0F2C4-80BA-4A3F-80A5-B2D2DEE27114} = {3191F68C-087D-45CE-8EB4-E6A67D96DD13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E772270-01FA-49D9-8A60-1BA52F53A3F7}

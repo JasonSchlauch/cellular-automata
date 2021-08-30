@@ -50,6 +50,7 @@ namespace lifelogic
       var storage2 = new GridStorage(Length, Length);
       // Iterate over all coordinates in the grid, assign result to "new" grid.
       
+      // TODO: Parallel foreach?
       foreach (ICoordinate coor in this.GetCoordinates())
       {
         IEntity entityClone = this.GetEntityAt(coor).Clone();
