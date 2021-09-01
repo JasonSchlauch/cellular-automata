@@ -24,11 +24,11 @@ namespace console_ui
             lifelogic.IEntity e = g.GetEntityAt(new lifelogic.PlanerCoordinate(i, j));
             if (e == null || !e.Alive)
             {
-              Console.Write("0");
+              Console.Write(" ");
             }
             else
             {
-              Console.Write("1");
+              Console.Write("■");
             }
           }
           Console.WriteLine();
